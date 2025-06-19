@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" styleClass="root-pane" stylesheets="@patient-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.PatientController">
+   <children>
+      <Label layoutX="500" layoutY="20" styleClass="title-label" text="QUẢN LÝ BỆNH NHÂN" />
+      <HBox alignment="CENTER_LEFT" layoutX="30" layoutY="85" spacing="5">
+         <Label styleClass="icon-label" text="🔍" />
+         <Label styleClass="label-with-icon" text="Tìm kiếm:" />
+         <TextField fx:id="txtTimKiem" onKeyReleased="#handleTimKiem" prefHeight="26" prefWidth="206" promptText="Nhập tên..." />
+      </HBox>
+      <TableView fx:id="tableView" layoutX="30" layoutY="130" prefHeight="600" prefWidth="754" styleClass="table-view">
+         <columns>
+            <TableColumn fx:id="colTen" prefWidth="126" text="Tên Bệnh Nhân" />
+            <TableColumn fx:id="colNgaySinh" prefWidth="92" text="Ngày Sinh" />
+            <TableColumn fx:id="colGioiTinh" prefWidth="71" text="Giới Tính" />
+            <TableColumn fx:id="colSoDienThoai" prefWidth="98" text="SĐT" />
+            <TableColumn fx:id="colEmail" prefWidth="150" text="Email" />
+            <TableColumn fx:id="colDiaChi" prefWidth="211" text="Địa Chỉ" />
+         </columns>
+      </TableView>
+      <VBox layoutX="850.0" layoutY="130.0" prefHeight="294.0" prefWidth="369.0" spacing="10" styleClass="form-vbox">
+         <Label styleClass="form-title" text="Thông tin bệnh nhân" />
+         <TextField fx:id="txtTen" prefHeight="26" prefWidth="234" promptText="Tên bệnh nhân" />
+         <HBox prefHeight="30" prefWidth="278" spacing="10">
+            <DatePicker fx:id="dateNgaySinh" prefHeight="26" prefWidth="158" promptText="Ngày sinh" />
+            <ComboBox fx:id="comboGioiTinh" prefHeight="26" prefWidth="109" promptText="Giới tính" />
+         </HBox>
+         <TextField fx:id="txtSoDienThoai" promptText="Số điện thoại" />
+         <TextField fx:id="txtEmail" promptText="Email" />
+         <TextField fx:id="txtDiaChi" promptText="Địa chỉ" />
+         <HBox alignment="CENTER" spacing="10" styleClass="button-hbox">
+            <Button onAction="#handleAdd" styleClass="btn-add" text="Thêm" />
+            <Button onAction="#handleUpdate" styleClass="btn-primary" text="Cập nhật" />
+            <Button onAction="#handleDelete" styleClass="btn-danger" text="Xoá" />
+            <Button onAction="#handleClear" styleClass="btn-secondary" text="Làm mới" />
+         </HBox>
+      </VBox>
+      <Pane fx:id="chartPane" layoutX="849.0" layoutY="435.0" prefHeight="294.0" prefWidth="370.0" styleClass="chart-pane" />
+   </children>
+</AnchorPane>

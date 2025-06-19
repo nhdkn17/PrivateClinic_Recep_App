@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.privateclinicms.controller.medicalThread.AddPatientController">
+    <VBox spacing="10">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="THÊM BỆNH NHÂN MỚI" />
+        <TextField fx:id="txtTenBenhNhan" promptText="Tên bệnh nhân" />
+        <DatePicker fx:id="dpNgaySinh" prefHeight="26.0" prefWidth="206.0" promptText="Ngày sinh" />
+        <HBox spacing="10">
+            <Label text="Giới tính:" />
+            <RadioButton fx:id="rbNam" text="Nam">
+            <toggleGroup>
+               <ToggleGroup fx:id="gioiTinhGroup" />
+            </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbNu" text="Nữ" toggleGroup="$gioiTinhGroup" />
+        </HBox>
+        <TextField fx:id="txtSoDienThoai" promptText="Số điện thoại" />
+        <TextField fx:id="txtEmail" promptText="Email" />
+        <TextField fx:id="txtDiaChi" promptText="Địa chỉ" />
+        <DatePicker fx:id="dpNgayKham" prefHeight="26.0" prefWidth="207.0" promptText="Ngày khám" />
+      <HBox prefHeight="25.0" prefWidth="207.0" spacing="10">
+         <children>
+              <Button fx:id="btnLuu" onAction="#handleLuuBenhNhan" style="-fx-background-color: #3cc98a; -fx-text-fill: white; -fx-background-radius: 4; -fx-cursor: hand; -fx-font-weight: bold;" text="Lưu bệnh nhân" />
+              <Button fx:id="btnClear" onAction="#handleClear" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-background-radius: 4; -fx-cursor: hand; -fx-font-weight: bold;" text="Làm mới" />
+         </children>
+      </HBox>
+    </VBox>
+</AnchorPane>

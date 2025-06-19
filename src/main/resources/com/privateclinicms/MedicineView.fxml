@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@medicine-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.MedicineController">
+    <children>
+        <Label layoutX="450" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Quản lý Lấy Thuốc" />
+        <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="76.0" prefHeight="41.0" prefWidth="782.0" spacing="20">
+            <children>
+                <Label styleClass="label" text="Tên bệnh nhân:" />
+                <TextField fx:id="txtPatientName" editable="false" prefWidth="250" promptText="Tên bệnh nhân" styleClass="text-field" />
+                <Label styleClass="label" text="Ngày lấy thuốc:" translateX="27.0" />
+                <DatePicker fx:id="datePicker" styleClass="date-picker" translateX="27.0" />
+            </children>
+        </HBox>
+        <TableView fx:id="tableMedicine" layoutX="50" layoutY="128.0" prefHeight="614.0" prefWidth="878.0" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="colMedicineName" prefWidth="180" text="Tên thuốc" />
+                <TableColumn fx:id="colUnit" prefWidth="80" text="Đơn vị" />
+                <TableColumn fx:id="colQuantityOrdered" prefWidth="100" text="Số lượng kê" />
+                <TableColumn fx:id="colQuantityAvailable" prefWidth="120" text="Số lượng kho" />
+                <TableColumn fx:id="colQuantityTaken" prefWidth="120" text="Số lượng lấy" />
+                <TableColumn fx:id="colPrice" prefWidth="120" text="Đơn giá (VNĐ)" />
+                <TableColumn fx:id="colTotalPrice" prefWidth="150" text="Thành tiền (VNĐ)" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnImportXML" layoutX="950.0" layoutY="128.0" prefWidth="120" styleClass="button" text="Nhập từ XML" />
+        <Button fx:id="btnTakeAll" layoutX="950.0" layoutY="599.0" onAction="#handleTakeAllPrescribed" prefWidth="120" styleClass="button" text="Lấy hết thuốc" />
+        <HBox layoutX="950.0" layoutY="664.0" spacing="10">
+            <children>
+                <Label styleClass="label" text="Tổng tiền thuốc:" />
+                <Label fx:id="lblTotalPrice" styleClass="total-price-label" text="0 VNĐ" translateY="-1.0" />
+            </children>
+        </HBox>
+        <HBox layoutX="950.0" layoutY="714.0" spacing="20">
+            <children>
+                <Button fx:id="btnConfirm" onAction="#handleConfirmMedicineTaking" prefWidth="150" style="-fx-background-color: #1bbf64;" text="Xác nhận lấy thuốc" />
+                <Button id="btnCancel" fx:id="btnCancel" onAction="#handleCancel" prefWidth="100" text="Hủy" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
