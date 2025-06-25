@@ -1,6 +1,9 @@
 package com.privateclinicms;
 
-import com.privateclinicms.controller.other.Dialog;
+import com.privateclinicms.client.controller.other.Dialog;
+import com.privateclinicms.shared.model.NhanVien;
+import com.privateclinicms.shared.model.SectionNhanVien;
+import com.privateclinicms.shared.util.JDBCUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +14,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class MainController {
     @FXML
@@ -24,11 +31,6 @@ public class MainController {
     @FXML
     private void loadDashboardContent() {
         loadFXMLContent("Dashboard.fxml");
-    }
-
-    @FXML
-    private void loadDoctorContent() {
-        loadFXMLContent("DoctorView.fxml");
     }
 
     @FXML
@@ -64,6 +66,11 @@ public class MainController {
     @FXML
     private void actionLogout(ActionEvent event) {
         try {
+            NhanVien nhanVien = SectionNhanVien.getNhanVien();
+            if (nhanVien != null) {
+                markUserAsLoggedOut(nhanVien.getMaNhanVien());
+            }
+
             Stage currentStage = (Stage) mainContent.getScene().getWindow();
             currentStage.close();
 
@@ -72,11 +79,43 @@ public class MainController {
             Stage loginStage = new Stage();
             loginStage.getIcons().add(new Image(getClass().getResource("/image/Clinic-logo.png").toString()));
             loginStage.setScene(loginScene);
-            loginStage.setTitle("Đăng Nhập");
+            loginStage.setTitle("Đăng Nhập PC Recep");
             loginStage.show();
         } catch (Exception e) {
             Dialog.showNotice("Lỗi", "Không thể đăng xuất!", false);
             e.printStackTrace();
         }
+    }
+
+    public void markUserAsLoggedOut(int maNhanVien) {
+        Integer maTaiKhoan = getMaTaiKhoanFromNhanVien(maNhanVien);
+        if (maTaiKhoan == null) return;
+
+        String query = "DELETE FROM DangNhapHienTai WHERE MaTaiKhoan = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, maTaiKhoan);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Integer getMaTaiKhoanFromNhanVien(int maNhanVien) {
+        String sql = "SELECT MaTaiKhoan FROM TaiKhoan WHERE MaNhanVien = ?";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, maNhanVien);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) return rs.getInt("MaTaiKhoan");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@appointment-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.WarehouseController">
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@CSS/appointment-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.client.controller.WarehouseController">
     <children>
         <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 28px; -fx-font-weight: bold;" text=" QUẢN LÝ KHO THUỐC">
              <graphic>

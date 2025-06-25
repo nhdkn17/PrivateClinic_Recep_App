@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@appointment-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.AppointmentController">
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@CSS/appointment-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.client.controller.AppointmentController">
     <children>
         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="14.0" prefHeight="37.0" prefWidth="1255" spacing="10">
             <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="📅 Quản lý Lịch khám" />

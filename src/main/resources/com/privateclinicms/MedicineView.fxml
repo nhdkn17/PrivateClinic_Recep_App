@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@medicine-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.MedicineController">
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" stylesheets="@CSS/medicine-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.client.controller.MedicineController">
     <children>
         <Label layoutX="450" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Quản lý Lấy Thuốc" />
         <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="76.0" prefHeight="41.0" prefWidth="782.0" spacing="20">

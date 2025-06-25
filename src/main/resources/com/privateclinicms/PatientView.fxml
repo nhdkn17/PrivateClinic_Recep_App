@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="787.0" prefWidth="1275.0" styleClass="root-pane" stylesheets="@patient-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.PatientController">
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" styleClass="root-pane" stylesheets="@CSS/patient-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.client.controller.PatientController">
    <children>
       <Label layoutX="500" layoutY="20" styleClass="title-label" text="QUẢN LÝ BỆNH NHÂN" />
       <HBox alignment="CENTER_LEFT" layoutX="30" layoutY="85" spacing="5">

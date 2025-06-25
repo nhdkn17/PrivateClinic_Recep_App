@@ -14,7 +14,7 @@ public class ClinicApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(ClinicApp.class.getResource("AuthView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1530, 787);
         stage.getIcons().add(new Image(getClass().getResource("/image/Clinic-logo.png").toString()));
-        stage.setTitle("Đăng Nhập");
+        stage.setTitle("Đăng Nhập Receptionist App");
         stage.setScene(scene);
         stage.show();
     }

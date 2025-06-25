@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="1530.0" stylesheets="@main-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="1530.0" stylesheets="@CSS/main-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.MainController">
     <children>
         <Pane prefHeight="787.0" prefWidth="256.0" styleClass="sidebar">
             <children>
@@ -24,15 +24,6 @@
                                 <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-7.0">
                                     <image>
                                         <Image url="@../../image/dashboard_icon.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#loadDoctorContent" styleClass="menu-button" text="Bác Sĩ">
-                            <graphic>
-                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
-                                    <image>
-                                        <Image url="@../../image/doctor_icon.png" />
                                     </image>
                                 </ImageView>
                             </graphic>

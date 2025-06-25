@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="787.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.controller.DashboardController">
+<AnchorPane prefHeight="787.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.privateclinicms.client.controller.DashboardController">
     <children>
         <BorderPane prefHeight="787" prefWidth="1275">
 <!--            <top>-->
